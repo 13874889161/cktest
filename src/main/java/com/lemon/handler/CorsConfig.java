@@ -1,4 +1,4 @@
-﻿package com.lemon.handler;
+package com.lemon.handler;
 /**
  * 解决跨域问题的过滤器
  */
