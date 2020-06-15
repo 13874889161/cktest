@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +34,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/project")
 @Api("项目模块")
+@CrossOrigin
 public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
