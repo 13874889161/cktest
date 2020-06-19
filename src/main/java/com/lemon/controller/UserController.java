@@ -38,7 +38,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/user")
 @Api("用户模块")
-//@CrossOrigin //解决前后端跨域的问题--使用公共过滤器时，此注解已经弃用
+@CrossOrigin //解决前后端跨域的问题--使用公共过滤器时，此注解已经弃用
 public class UserController {
 
 	@Autowired

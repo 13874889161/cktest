@@ -4,6 +4,7 @@ package com.lemon.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/cases")
 @Api("测试案例模块")
+@CrossOrigin 
 public class CasesController {
 
 	@Autowired

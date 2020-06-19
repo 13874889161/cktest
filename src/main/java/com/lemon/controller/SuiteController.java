@@ -8,6 +8,7 @@ import javax.management.Query;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/suite")
 @Api("测试套件模块")
+@CrossOrigin 
 public class SuiteController {
 	@Autowired
 	SuiteService suiteService;

@@ -4,6 +4,7 @@ package com.lemon.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,6 +28,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/ruleType")
 @Api("断言类型模块")
+@CrossOrigin 
 public class RuleTypeController {
 	@Autowired
 	RuleTypeService  ruleTypeService;
