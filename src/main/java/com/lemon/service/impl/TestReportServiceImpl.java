@@ -161,7 +161,10 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 					testReport.setCaseId(caseEditVO.getId());//caseID
 					testReport.setRequestHeaders(JSON.toJSONString(headers));//请求头
 					testReport.setResponseHeaders(JSON.toJSONString(response.getHeaders()));//响应头
-					String responseBody=response.getBody().toString();
+					String responseBody="";
+					if(response.getBody()!=null){
+					 responseBody=response.getBody().toString();
+					}
 					testReport.setResponseBody(responseBody);//请求体
 					testReport.setPassFlag(assertByTestRule(responseBody,caseEditVO.getTestRules()));//断言结果
 				}catch(Exception e){

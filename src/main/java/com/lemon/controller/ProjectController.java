@@ -61,11 +61,21 @@ public class ProjectController {
 	@PostMapping("/addProject")
 	@ApiOperation(value="新增项目",httpMethod="POST")
 	public  Result addProject(Project project){
+		Result result=null;
 		//因为前段传入的project对象的不会有userId；所以需要自己获取
 		User user=(User) SecurityUtils.getSubject().getPrincipal();
-		project.setCreateUser(user.getId());
-		projectService.save(project);
-		return new Result("1","添加成功");
+		QueryWrapper<Project> queryWrapper=new QueryWrapper<>();
+		queryWrapper.eq("name", project.getName());
+		Project selectProject=projectService.getOne(queryWrapper);
+		if(selectProject !=null){
+			result=new Result("2", "项目已存在");
+		}else{
+			project.setCreateUser(user.getId());
+			projectService.save(project);
+			result=new Result("1","添加成功");
+			
+		}
+		return result;
 	}
 	
 	/**
